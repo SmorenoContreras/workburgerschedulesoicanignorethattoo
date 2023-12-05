@@ -14,4 +14,20 @@ $(function () {
 
   })
 
+//this is to run through the time block and add classes depending on time
+$('.time-block').each(function () {
+
+  var timeBlockHour = parseInt($(this).attr('id').split('-')[1])
+
+  if (timeBlockHour < currentTime) {
+
+    $(this).addClass("past")
+  } else if (timeBlockHour === currentTime) {
+
+    $(this).addClass("present")
+  } else {
+    $(this).addClass("future")
+  }
+
 })
+
